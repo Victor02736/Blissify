@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+  <title>Blissify</title>
+  <style>
+    .divteste {
+      border-width: 2px;
+      border-color: black;
+      border-style: solid;
+      display: inline-block;
+    }
+
+    #caixa1 {
+      border-radius: 20px;
+    }
+
+    #caixa2 {
+      border-radius: 80px 90px;
+    }
+
+    #caixa3 {
+      border-radius: 0px 0px 200px 0px;
+      border-color: #0e1317;
+      box-sizing: border-box;
+    }
+
+    .secao4 {
+      margin: 0;
+      font-family: Helvetica, sans-serif;
+    }
+
+    .secao4-div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .secao4-div-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: calc(100% / 3 - 60px);
+      margin: 10px;
+      padding: 20px;
+      box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      background-color: white;
+      transition: all 0.5s ease;
+    }
+
+    .secao4-div-card:hover {
+      transform: scale(1.1);
+      z-index: 1;
+    }
+
+    .secao4-div-card img {
+      width: 35%;
+      height: auto;
+    }
+
+    .secao4-div-card h3 {
+      margin-bottom: 0px;
+    }
+
+    /* Estilos para dispositivos móveis */
+    @media (max-width: 768px) {
+      .secao4-div-card {
+        width: 100%;
+      }
+     /*2°parte: botão com imagem*/ 
+      body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .image-container {
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .image-caption {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .modal{
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+       
+
+    }
+  </style>
+
+</head>
+
+<body bgcolor="#cadeed" class="wrapper">
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card w3-cursive">
+      <a href="#home" class="w3-bar-item w3-button"><img src="img/iconlogo.png" width="60px" height="60px"> Blissify</a>
+      <div class="w3-right w3-center w3-hide-small">
+        <p></p>
+        <a href="loginpage.html" class="w3-bar-item w3-button">Login</a>
+        <a href="#about" class="w3-bar-item w3-button">About</a>
+      </div>
+    </div>
+  </div>
+  <!-- intro-->
+  <div>
+    <header class="w3-content w3-center" style="max-width: 1900px">
+      <img src="img/first2.gif" alt="">
+      <!--<video src="img/first.mp4" width="1920" height="1080" class="w3-video w3-center" controls autoplay loop></video>
+    -->
+    </header>
+  </div>
+  <!--informações-->
+  <!--foto-->
+  <div class="w3-cursive divteste" id="caixa3" style="background-color: #cadeed">
+    <div class="w3-padding-64" id="about" style="display: flex;">
+      <div class="w3-col m6 w3-padding-large w3-hide-small">
+        <img src="img/segundamulher.jpg" class="w3-round w3-image" alt="" width="650" height="750">
+      </div>
+      <!--texto-->
+      <div class="w3-panel w3-card w3-round-xxlarge" style="width: 80%; margin-left: auto;">
+        <h1 class="w3-center">BLISSIFY</h1><br>
+
+        <p class="w3-xlarge">No mundo agitado de hoje, a saúde mental é mais importante do que nunca. 
+          No entanto, muitas vezes é negligenciada em favor de outros aspectos da saúde. Aqui no Blissfy,
+          estamos comprometidos em oferecer recursos e apoio para ajudá-lo a cultivar uma mente saudável
+          e equilibrada.</p>
+        <p><span class="w3-tag w3-light-grey w3-large">O que é Blissfy?</span></p>
+        <p class="w3-bold w3-xlarge">Blissfy é mais do que apenas um site, 
+          é um santuário digital para todos os que buscam paz interior, equilíbrio emocional e felicidade genuína.
+          Nossa plataforma oferece uma variedade de ferramentas e informações para ajudá-lo em sua jornada de bem-estar mental.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2°parte -->
+  <div style="background-color: #b7d2e1;" class="w3-cursive">
+    <div class="w3-container w3-padding-32 " >
+      <div class="w3-container" >
+        <div class="w3-content" style="max-width:700px">
+           <h3 class="w3-center "><span class="w3-tag w3-wide ">Descrição</span></h3>
+             <p class="w3-large w3-center">Se você é terapeuta e busca otimizar o seu atendimento, nosso sistema de 
+              gestão é a solução perfeita para você. Com ele, você terá acesso a uma interface 
+              simples, intuitiva e completa, desenhada especialmente para facilitar o seu dia a dia.
+              <br>Se você está em busca de apoio para melhorar sua saúde mental e emocional, a conexão 
+              entre você e seu terapeuta é fundamental. Com nossa ferramenta de gestão terapêutica, 
+              tanto você quanto o profissional que o acompanha terão à disposição um sistema que promove
+              um atendimento mais eficiente, organizado e humanizado.</p>
+    </div>
+  </div>
+
+  
+<!--parte do terapeuta-->
+
+ <div class=" w3-margin w3-half ">
+     
+      <p><span class="w3-tag w3-light-grey w3-large" id="01">Terapeuta</span></p>
+      <div class="w3-container secao4-div-card w3-center"style="background-color: #CADEED; width: 60%; ">
+        <a href="" id="linkJapa" onclick="document.getElementById('id01').style.display='block'">
+          <img class="w3-center" src="img/japa.jpg" alt="terapeuta" style="width:100%">
+          <div class="w3-container" >
+            <p>Criamos uma ferramenta para ajudar terapeutas a organizar suas atividades diárias,
+              facilitando a gestão do tempo e permitindo que eles se concentrem no que é mais 
+              importante: o cuidado com o paciente.</p>
+          </div>
+        </a>
+      </div>
+
+      <div id="id01" class="w3-modal ">
+        <div  class="w3-modal-content w3-card-4">
+          <header class="w3-container w3-teal"> 
+            <span class="close" onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+            <p><span class="w3-xlarge" >Instruções:</span></p>
+          </header>
+          <div class="w3-container  ">
+            <h3 class="w3-cursive">Ficha Terapeuta:</h3>
+          <p style="font-size: large;">Organize e gerencie suas informações profissionais de maneira 
+            prática e segura. A ficha do terapeuta permite que você armazene dados importantes como 
+            especializações, certificações, agendas de atendimento e muito mais. Com tudo em um só lugar,
+            você pode focar no que realmente importa: o atendimento ao paciente.</p>
+          </div>
+
+          <h3 class="w3-xlarge w3-container w3-cursive">Ficha do paciente:</h3>
+        </header>
+        <div class="w3-container">
+        <p style="font-size: large;">Tenha um histórico detalhado de cada paciente ao alcance de um clique. 
+          A ficha do paciente é o seu aliado na coleta e organização de informações essenciais, como dados
+           pessoais, histórico médico, sessões anteriores e planos de tratamento. Dessa forma, você acompanha
+            a evolução de cada paciente de maneira personalizada, garantindo um atendimento mais eficiente e
+             humanizado.</p>
+        </div>
+
+        <h3 class="w3-xlarge w3-container w3-cursive">Ferramentas do terapeuta:</h3>
+      </header>
+      <div class="w3-container">
+      <p style="font-size: large;">Eleve a qualidade do seu trabalho com nossas ferramentas exclusivas. 
+        Elas foram desenvolvidas para facilitar o planejamento e a execução das sessões, oferecendo 
+        suporte na criação de relatórios, anotações, gráficos de progresso e muito mais. Cada recurso
+         foi pensado para apoiar a sua prática profissional, proporcionando insights valiosos que 
+         auxiliam na tomada de decisões e no acompanhamento do desenvolvimento do paciente.</p>
+      </div>
+        </div>
+      </div>
+    </div>
+
+        <!--parte do paciente-->
+
+      <div >
+        <p><span class="w3-tag w3-light-grey w3-large" id="02">Paciente</span></p>
+        <div class="w3-container secao4-div-card" style="background-color: #CADEED; width: 30%;">
+          <0a href="" id="linkPaciente"  onclick="document.getElementById('id02').style.display='block'">
+            <img class="" src="img/paciente.jpg" alt="paciente" style="width:100%;">
+            <div class="w3-container" >
+              <p>Se você está em busca de apoio para melhorar sua saúde mental e emocional, 
+                a conexão entre você e seu terapeuta é fundamental. Com nossa ferramenta de
+                gestão terapêutica, tanto você quanto o profissional que o acompanha terão à
+                 disposição um sistema que promove um atendimento mais eficiente, organizado
+                  e humanizado.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+        <div id="id02" class="w3-modal w3-animate-zoom">
+          <div  class="w3-modal-content w3-card-4">
+            <header class="w3-container w3-teal"> 
+              <span onclick="document.getElementById('id02').style.display='none'" 
+              class="w3-button w3-display-topright">&times;</span>
+              <p><span class="w3-xlarge" >Instruções:</span></p>
+            </header>
+            <div class="w3-container">
+              <h3 class="w3-cursive">Olá Paciente:</h3>
+            <p style="font-size: large;">Você, como paciente, é o centro de toda a nossa
+               atenção. Sabemos que cada pessoa é única e que sua história e necessidades
+                merecem um acompanhamento personalizado. Com a nossa ferramenta, o 
+                terapeuta poderá manter um registro detalhado do seu progresso, histórico
+                 de sessões e plano de tratamento. Isso permite que ele tenha uma visão 
+                 completa e atualizada do seu caso, oferecendo um atendimento mais preciso 
+                 e ajustado às suas necessidades específicas.</p>
+            </div>
+  
+            <h3 class="w3-xlarge w3-container w3-cursive">Terapeuta:</h3>
+          </header>
+          <div class="w3-container">
+          <p style="font-size: large;">O terapeuta é o guia da sua jornada para o bem-estar. 
+            Com conhecimento, experiência e empatia, ele está ao seu lado em cada passo, 
+            ajudando-o a superar desafios e a encontrar equilíbrio emocional. Para que o
+             terapeuta possa se concentrar totalmente em suas necessidades, desenvolvemos 
+             uma ferramenta que facilita a organização de todas as suas atividades profissionais
+              Isso significa que ele terá mais tempo e energia para dedicar ao seu progresso.</p>
+          </div>
+  
+          <h3 class="w3-xlarge w3-container w3-cursive">Ficha do terapeuta:</h3>
+        </header>
+        <div class="w3-container">
+        <p style="font-size: large;">Nosso sistema oferece ao terapeuta uma maneira fácil e 
+          prática de organizar suas especializações, horários de atendimento e demais informações 
+          profissionais. Isso permite que ele se mantenha focado no seu cuidado, enquanto a 
+          tecnologia cuida do resto.</p>
+
+          <h3 class="w3-xlarge w3-container w3-cursive">Sua Ficha:</h3>
+        </header>
+        <div class="w3-container">
+        <p style="font-size: large;">Sua jornada é única, e sua ficha de paciente reflete isso. Nela,
+           são armazenadas informações essenciais sobre seu histórico de saúde, suas sessões anteriores
+            e o plano de tratamento. Dessa forma, o terapeuta pode acompanhar de perto sua evolução,
+             ajustando o tratamento conforme necessário para garantir que você esteja no caminho certo
+              para o bem-estar.</p>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+     
+ 
+
+  
+ 
+
+    
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    
+    document.getElementById("linkJapa").addEventListener("click", function(event){
+      event.preventDefault()
+    });
+
+    document.getElementById("linkPaciente").addEventListener("click", function(event){
+      event.preventDefault()
+    });
+  </script>
+
+</body>
+
+</html>
