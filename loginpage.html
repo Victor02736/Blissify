@@ -37,9 +37,7 @@
           <button type="submit" value="submit">Registrar</button>
           <span>continue com</span>
           <div class="social-container">
-            <a href="#" class="social"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
+            <a href="#" class="social"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
             <a href="#" class="social"><i class="fa-brands fa-tiktok"></i></a>
           </div>
@@ -72,9 +70,10 @@
           <button type="submit" value="submit">Iniciar Sessão</button>
           <span>Ou use sua conta</span>
           <div class="social-container">
-            <a href="#" class="social"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
+            <fb:login-button 
+              scope="public_profile,email"
+              onlogin="checkLoginState();">
+            </fb:login-button>
             <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
             <a href="#" class="social"><i class="fa-brands fa-tiktok"></i></a>
           </div>
@@ -84,11 +83,8 @@
       <div class="overlay-container">
         <div class="overlay">
           <div class="overlay-panel overlay-left">
-            <h1 class="title">
-              Olá <br />
-              amigo
-            </h1>
-            <p>Se ja tem uma conta, inicie sua sessão aqui e divirta-se</p>
+            <h1 class="title">Olá <br /> amigo</h1>
+            <p>Se já tem uma conta, inicie sua sessão aqui e divirta-se</p>
             <button class="ghost" id="login">
               Iniciar Sessão
               <i class="fa-solid fa-arrow-left"></i>
@@ -96,13 +92,8 @@
           </div>
 
           <div class="overlay-panel overlay-right">
-            <h1 class="title">
-              Comece sua <br />
-              jornada agora
-            </h1>
-            <p>
-              Se ainda não tem uma conta, <br>junte-se a nós e comece sua jornada
-            </p>
+            <h1 class="title">Comece sua <br /> jornada agora</h1>
+            <p>Se ainda não tem uma conta, <br>junte-se a nós e comece sua jornada</p>
             <button class="ghost" id="register">
               Registrar
               <i class="fa-solid fa-arrow-right"></i>
@@ -117,10 +108,10 @@
   <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '{your-app-id}',
+      appId      : '{1085473023101318}',
       cookie     : true,
       xfbml      : true,
-      version    : '{api-version}'
+      version    : '{v12.0}'
     });
     
     FB.AppEvents.logPageView();
@@ -134,16 +125,20 @@
   // Callback function to handle login status
   function statusChangeCallback(response) {
     if (response.status === 'connected') {
-      // User is logged into Facebook and your app
-      console.log('User is logged in and connected:', response.authResponse);
-      // Redirect to logged in experience
-      // window.location = 'loggedin.html'; // Uncomment this to redirect
+      console.log('Usuário está logado e conectado:', response.authResponse);
+      // Redirecionar para a experiência logada
+      // window.location = 'loggedin.html'; // Descomente para redirecionar
     } else {
-      // User is not logged in or not authorized
-      console.log('User is not logged in or not authorized:', response);
-      // Optionally prompt for login
-      // FB.login(); // Uncomment this to prompt for login
+      console.log('Usuário não está logado ou não autorizado:', response);
+      // Opcionalmente solicitar login
+      // FB.login(); // Descomente para solicitar login
     }
+  }
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
   }
 
   (function(d, s, id){
