@@ -122,10 +122,29 @@
       xfbml      : true,
       version    : '{api-version}'
     });
-      
-    FB.AppEvents.logPageView();   
-      
+    
+    FB.AppEvents.logPageView();
+    
+    // Check login status
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
   };
+
+  // Callback function to handle login status
+  function statusChangeCallback(response) {
+    if (response.status === 'connected') {
+      // User is logged into Facebook and your app
+      console.log('User is logged in and connected:', response.authResponse);
+      // Redirect to logged in experience
+      // window.location = 'loggedin.html'; // Uncomment this to redirect
+    } else {
+      // User is not logged in or not authorized
+      console.log('User is not logged in or not authorized:', response);
+      // Optionally prompt for login
+      // FB.login(); // Uncomment this to prompt for login
+    }
+  }
 
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
